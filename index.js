@@ -15,16 +15,16 @@ const debug = require('debug')('socketio');
 const engineUtil = require('artillery/core/lib/engine_util.js');
 const EngineHttp = require('artillery/core/lib/engine_http.js');
 const template = engineUtil.template;
-module.exports = SocketIoEngine;
+module.exports = SocketIoEngineV2;
 
-function SocketIoEngine (script) {
+function SocketIoEngineV2 (script) {
   this.config = script.config;
 
   this.socketioOpts = this.config.socketio || {};
   this.httpDelegate = new EngineHttp(script);
 }
 
-SocketIoEngine.prototype.createScenario = function (scenarioSpec, ee) {
+SocketIoEngineV2.prototype.createScenario = function (scenarioSpec, ee) {
   var self = this;
   // Adds scenario overridden configuration into the static config
   this.socketioOpts = {...this.socketioOpts, ...scenarioSpec.socketio};
@@ -141,7 +141,7 @@ function processResponse (ee, data, response, context, callback) {
   });
 }
 
-SocketIoEngine.prototype.step = function (requestSpec, ee) {
+SocketIoEngineV2.prototype.step = function (requestSpec, ee) {
   let self = this;
 
   if (requestSpec.loop) {
@@ -305,7 +305,7 @@ SocketIoEngine.prototype.step = function (requestSpec, ee) {
   }
 };
 
-SocketIoEngine.prototype.loadContextSocket = function (namespace, context, cb) {
+SocketIoEngineV2.prototype.loadContextSocket = function (namespace, context, cb) {
   context.sockets = context.sockets || {};
 
   if (!context.sockets[namespace]) {
@@ -338,7 +338,7 @@ SocketIoEngine.prototype.loadContextSocket = function (namespace, context, cb) {
   }
 };
 
-SocketIoEngine.prototype.closeContextSockets = function (context) {
+SocketIoEngineV2.prototype.closeContextSockets = function (context) {
   // if(context.socketio) {
   //   context.socketio.disconnect();
   // }
@@ -350,7 +350,7 @@ SocketIoEngine.prototype.closeContextSockets = function (context) {
   }
 };
 
-SocketIoEngine.prototype.compile = function (tasks, scenarioSpec, ee) {
+SocketIoEngineV2.prototype.compile = function (tasks, scenarioSpec, ee) {
   let config = this.config;
   let self = this;
 
