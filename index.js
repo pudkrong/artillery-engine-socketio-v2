@@ -186,6 +186,8 @@ SocketIoEngineV2.prototype.step = function (requestSpec, ee) {
       callback(new Error('socketio: invalid arguments'));
     }
 
+    // TONOTE::PUD Stats per emit.channel
+    ee.emit('counter', `engine.socketio.emit.${requestSpec.emit.channel}`, 1);
     let outgoing = {
       channel: template(requestSpec.emit.channel, context),
       data: template(requestSpec.emit.data, context)
