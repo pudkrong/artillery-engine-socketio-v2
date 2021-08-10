@@ -1,0 +1,37 @@
+{
+  "name": "artillery-engine-socketio-v2",
+  "version": "1.0.2",
+  "description": "Socket.IO v2 engine for Artillery",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pudkrong/artillery-engine-socketio-v2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pudkrong/artillery-engine-socketio-v2/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "homepage": "https://github.com/pudkrong/artillery-engine-socketio-v2#readme",
+  "author": "Pisut Sritrakulchai <pudkrong@hotmail.com>",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "artillery": "1.7.6",
+    "async": "^1.5.2",
+    "debug": "^4.3.1",
+    "deep-equal": "^1.0.1",
+    "lodash": "^4.17.20",
+    "socket.io-client": "^2.1.0",
+    "socketio-wildcard": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "artillery",
+    "engine",
+    "socketio"
+  ]
+}
