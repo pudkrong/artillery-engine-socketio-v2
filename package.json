@@ -1,5 +1,5 @@
 {
-  "name": "@pudkrong/artillery-engine-socketio-v2",
+  "name": "artillery-engine-socketio-v2",
   "version": "1.0.1",
   "description": "Socket.IO v2 engine for Artillery",
   "main": "index.js",
