@@ -1,6 +1,6 @@
 {
   "name": "artillery-engine-socketio-v2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Socket.IO v2 engine for Artillery",
   "main": "index.js",
   "repository": {
@@ -17,7 +17,7 @@
   "author": "Pisut Sritrakulchai <pudkrong@hotmail.com>",
   "license": "MPL-2.0",
   "dependencies": {
-    "artillery": "1.6.1",
+    "artillery": "1.7.6",
     "async": "^1.5.2",
     "debug": "^4.3.1",
     "deep-equal": "^1.0.1",
