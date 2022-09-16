@@ -40,9 +40,16 @@ SocketIoEngineV2.prototype.createScenario = function (scenarioSpec, ee) {
 };
 
 function markEndTime (ee, context, startedAt) {
+  const channel = context
+    && context.vars
+    && context.vars['emit']
+    && context.vars['emit'].channel
+
+  if (!channel) return
+
   let endedAt = process.hrtime(startedAt);
   let delta = (endedAt[0] * 1e9) + endedAt[1];
-  ee.emit('histogram', `engine.socketio.${context.vars['emit'].channel}.response_time`, delta / 1e6);
+  ee.emit('histogram', `engine.socketio.${channel}.response_time`, delta / 1e6);
 }
 
 function isResponseRequired (spec) {
